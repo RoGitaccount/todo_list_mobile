@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">TodoList</string>
+    <string name="ajouter_tache">Ajouter une tâche</string>
+    <string name="titre_tache">Titre de la tâche</string>
+    <string name="description_tache">Description de la tâche</string>
+    <string name="date_chance_tache">Date d\'échance de la tâche :</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="email">Email</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié ?</string>
+    <string name="connexion">Connexion</string>
+    <string name="en_cours">En cours</string>
+    <string name="modifier">modifier</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="ma_liste_des_taches">Ma liste des tâches</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="pas_de_compte">Pas encore de compte ? Inscrivez-vous</string>
+    <string name="bienvenue_sur_votre_todolist">Bienvenue sur votre ToDoList!</string>
+    <string name="gerez_vos_taches_efficacement">Gérez vos tâches efficacement</string>
+    <string name="inscription">Inscription</string>
+    <string name="phrase_d_accroche">Organisez votre journée avec style !</string>
+    <string name="have_an_account">Vous avez déjà un compte ? Connectez-vous</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="liste_statuts">
+        <item>En cours</item>
+        <item>Faite</item>
+        <!--    <item>Date d\'echéance dépassé</item>  -->
+    </string-array>
+
+
+
+</resources>

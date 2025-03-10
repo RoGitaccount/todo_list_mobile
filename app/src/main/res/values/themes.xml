@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.TodoList" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <style name="Theme.TodoList_" parent="Theme.AppCompat.Light.NoActionBar" />
+
+
+    <style name="Base.Theme.Demo" parent="Theme.Material3.DayNight.NoActionBar"/>
+
+</resources>
