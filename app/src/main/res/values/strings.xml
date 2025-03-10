@@ -22,6 +22,7 @@
     <string name="have_an_account">Vous avez déjà un compte ? Connectez-vous</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="s_inscrire">S\'inscrire</string>
 
     <string-array name="liste_statuts">
         <item>En cours</item>

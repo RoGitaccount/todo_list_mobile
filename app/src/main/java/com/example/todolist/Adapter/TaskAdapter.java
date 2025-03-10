@@ -1,28 +1,27 @@
-package com.example.todolist;
+package com.example.todolist.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todolist.Model.Task;
+import com.example.todolist.R;
+import com.example.todolist.View.ActivityEdit;
 import com.google.android.material.button.MaterialButton;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
 
     private List<Task> taskList;
     private OnItemDeleteListener onItemDeleteListener;
 
-
-    public TaskAdapter(List<Task> taskList,OnItemDeleteListener onDeleteListener) {
+    public TaskAdapter(List<Task> taskList, OnItemDeleteListener onDeleteListener) {
         this.taskList = taskList;
         this.onItemDeleteListener = onDeleteListener;
     }
@@ -41,11 +40,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.description.setText(task.getDescription());
         holder.deadline.setText("Échéance : " + task.getDeadline());
 
-
         String status = task.getStatut();
         holder.status.setText(status);
 
-// Appliquer le style en fonction du statut
         if ("Faite".equalsIgnoreCase(status)) {
             holder.status.setTextColor(holder.itemView.getResources().getColor(R.color.green));
             holder.status.setBackgroundColor(holder.itemView.getResources().getColor(R.color.light_green));
@@ -57,26 +54,20 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             holder.status.setBackgroundColor(holder.itemView.getResources().getColor(R.color.light_orange));
         }
 
-        holder.buttonDelete.setOnClickListener(v->
-        {
-            if(onItemDeleteListener != null){
+        holder.buttonDelete.setOnClickListener(v -> {
+            if (onItemDeleteListener != null) {
                 onItemDeleteListener.onItemDelete(position);
             }
         });
-    }
 
-    private boolean isDeadlinePassed(String deadline) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        try {
-            Date taskDate = sdf.parse(deadline);
-            Date currentDate = new Date();
-            if (taskDate != null && taskDate.before(currentDate)) {
-                return true;
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return false;
+        holder.buttonUpdate.setOnClickListener(v -> {
+            Intent intent = new Intent(holder.itemView.getContext(), ActivityEdit.class);
+            intent.putExtra("taskId", task.getId());
+            intent.putExtra("title", task.getTitre());
+            intent.putExtra("description", task.getDescription());
+            intent.putExtra("deadline", task.getDeadline());
+            holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override
@@ -85,16 +76,16 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     }
 
     public void removeItem(int position) {
-        if (position >= 0 && position < taskList.size()) {  // Vérifier si l'index est valide
+        if (position >= 0 && position < taskList.size()) {
             taskList.remove(position);
             notifyItemRemoved(position);
-            notifyItemRangeChanged(position, taskList.size());  // Mettre à jour les positions des items
+            notifyItemRangeChanged(position, taskList.size());
         }
     }
 
     public static class TaskViewHolder extends RecyclerView.ViewHolder {
         TextView title, description, status, deadline;
-        MaterialButton buttonDelete;
+        MaterialButton buttonDelete, buttonUpdate;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -103,11 +94,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             status = itemView.findViewById(R.id.task_status);
             deadline = itemView.findViewById(R.id.task_deadline);
             buttonDelete = itemView.findViewById(R.id.button_delete);
+            buttonUpdate = itemView.findViewById(R.id.button_update);
         }
     }
 
-    public interface OnItemDeleteListener
-    {
+    public interface OnItemDeleteListener {
         void onItemDelete(int position);
     }
 }

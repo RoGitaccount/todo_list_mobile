@@ -4,17 +4,29 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Task {
-
+    private String id;
     private String titre;
     private String description;
-    private String deadline;
     private String statut;
+    private String deadline;
+
+    // Default constructor required for calls to DataSnapshot.getValue(Task.class)
+    public Task() {
+    }
 
     public Task(String titre, String description, String statut, String deadline) {
         this.titre = titre;
         this.description = description;
         this.statut = statut;
         this.deadline = deadline;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitre() {
@@ -33,25 +45,7 @@ public class Task {
         this.description = description;
     }
 
-    public String getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(String deadline) {
-        this.deadline = deadline;
-    }
-
-
-
-    public void setStatut(String statut) {
-        this.statut = statut;
-    }
-
     public String getStatut() {
-        // Vérifier si la date est dépassée
-        if (isDeadlinePassed()) {
-            return "Date d'échéance dépassée";
-        }
         return statut;
     }
 
@@ -66,6 +60,16 @@ public class Task {
             return false;
         }
     }
+
+    public void setStatut(String statut) {
+        this.statut = statut;
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
 }
-
-

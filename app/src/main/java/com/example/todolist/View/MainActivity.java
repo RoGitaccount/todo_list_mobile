@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.todolist.R;
 import com.example.todolist.View.ActivityLogin;
 import com.example.todolist.databinding.ActivityMainBinding;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         EdgeToEdge.enable(this);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());

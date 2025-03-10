@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="liste_statuts">
+        <item>En cours</item>
+        <item>Faite</item>
+        
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="dark_blue">#3F51B5</color>
+    <color name="gray">#808080</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_green">#AEFDB2</color>
+    <color name="light_orange">#FFF3E0</color>
+    <color name="light_red">#FFABAB</color>
+    <color name="orange">#FF9800</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="red">#FF0000</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="ajouter">Ajouter</string>
+    <string name="ajouter_tache">Ajouter une tâche</string>
+    <string name="app_name">TodoList</string>
+    <string name="bienvenue_sur_votre_todolist">Bienvenue sur votre ToDoList!</string>
+    <string name="connexion">Connexion</string>
+    <string name="date_chance_tache">Date d\'échance de la tâche :</string>
+    <string name="description_tache">Description de la tâche</string>
+    <string name="email">Email</string>
+    <string name="en_cours">En cours</string>
+    <string name="gcm_defaultSenderId" translatable="false">566862844242</string>
+    <string name="gerez_vos_taches_efficacement">Gérez vos tâches efficacement</string>
+    <string name="google_api_key" translatable="false">AIzaSyB-JWcTaTdpHps93eWbvJeHdpu5EOIRJew</string>
+    <string name="google_app_id" translatable="false">1:566862844242:android:58bbf046d9f15d522f2a8b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB-JWcTaTdpHps93eWbvJeHdpu5EOIRJew</string>
+    <string name="google_storage_bucket" translatable="false">todolist-2c138.firebasestorage.app</string>
+    <string name="have_an_account">Vous avez déjà un compte ? Connectez-vous</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="inscription">Inscription</string>
+    <string name="ma_liste_des_taches">Ma liste des tâches</string>
+    <string name="modifier">modifier</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié ?</string>
+    <string name="pas_de_compte">Pas encore de compte ? Inscrivez-vous</string>
+    <string name="phrase_d_accroche">Organisez votre journée avec style !</string>
+    <string name="project_id" translatable="false">todolist-2c138</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="titre_tache">Titre de la tâche</string>
+    <style name="Base.Theme.Demo" parent="Theme.Material3.DayNight.NoActionBar"/>
+    <style name="Theme.TodoList" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
+    <style name="Theme.TodoList_" parent="Theme.AppCompat.Light.NoActionBar"/>
+</resources>

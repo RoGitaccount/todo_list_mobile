@@ -52,15 +52,21 @@ dependencies {
     // ajout constraint layout
     implementation ("androidx.constraintlayout:constraintlayout:2.2.1")
 
+    // LiveData et ViewModel (MVVM)(si non inclus dans Jetpack)
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     
+    // Firebase Authentication
+    implementation("com.google.firebase:firebase-auth")
+    //implementation("com.google.android.gms:play-services-auth:21.0.1")
 
-    implementation ("com.google.android.material:material:1.12.0")
+    // Firebase UI Auth (pour affichage automatique des choix)
+    implementation("com.firebaseui:firebase-ui-auth:8.0.2")
 
+    implementation("com.google.firebase:firebase-database")
 
     implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
-
     implementation("com.google.firebase:firebase-analytics")
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
